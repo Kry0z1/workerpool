@@ -60,9 +60,11 @@ func (w *WorkerPool) Submit(task string) error {
 	select {
 	case <-w.stopping:
 		return ErrStopped
-	case w.tasks <- task:
-		return nil
+	default:
 	}
+
+	w.tasks <- task
+	return nil
 }
 
 // Waits for workers to end their tasks and tasks in buffer and shuts workers down
