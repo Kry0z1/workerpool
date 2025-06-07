@@ -8,7 +8,7 @@
 
 ## Testing
 ```bash
-git clone github.com/Kry0z1/workerpool
+git clone https://github.com/Kry0z1/workerpool.git
 cd workerpool
 go test -v -race .
 ```
